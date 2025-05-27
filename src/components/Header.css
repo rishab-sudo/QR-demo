@@ -1,0 +1,127 @@
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: white;
+  border-bottom: 1px solid #ddd;
+}
+
+.left, .right {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  font-size: 22px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.hotel-logo {
+  height: 40px;
+}
+
+.icon.active {
+  color: green;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 260px;
+  height: 100%;
+  background: #f8f8f8;
+  padding: 20px;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 28px;
+  float: right;
+  cursor: pointer;
+}
+
+.sidebar-logo {
+  display: block;
+  margin: 0 auto 20px;
+  width: 80px;
+}
+
+.sidebar-btn {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  background: white;
+  border: 1px solid #ddd;
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-icon {
+  margin-right: 10px;
+}
+
+.vertical-icon {
+  flex-direction: column;
+  text-align: center;
+}
+
+.vertical-icon .btn-icon.large {
+  font-size: 24px;
+  margin: 0 0 5px 0;
+}
+
+/* Search */
+.search-bar {
+  flex: 1;
+  max-width: 500px;
+  padding: 0 20px;
+}
+
+.search-input-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: white;
+}
+
+.fixed-label {
+  font-weight: bold;
+  white-space: nowrap;
+  margin-right: 10px;
+}
+
+.divider {
+  width: 1px;
+  height: 24px;
+  background-color: #ccc;
+  margin-right: 10px;
+}
+
+.search-input-box input {
+  border: none;
+  outline: none;
+  flex: 1;
+  padding: 6px;
+}
+
+.search-icon {
+  margin-left: 8px;
+  color: #555;
+}
+
