@@ -1,42 +1,30 @@
-// redux/cartSlice.js
 import { createSlice } from "@reduxjs/toolkit";
-
 const cartSlice = createSlice({
   name: "cart",
-  initialState: {
-    items: [],
-    showBottomBar: false,
-    showCartModal: false
-  },
+  initialState: { items: [], showModal: false },
   reducers: {
     addToCart: (state, action) => {
-      const existingItem = state.items.find(item => item.name === action.payload.name);
-      if (existingItem) {
-        existingItem.quantity += 1;
+      const item = action.payload;
+      const existing = state.items.find((i) => i.id === item.id);
+      if (existing) {
+        existing.quantity += 1;
       } else {
-        state.items.push({ ...action.payload, quantity: 1 });
+        state.items.push({ ...item, quantity: 1 });
       }
-      state.showBottomBar = true;
     },
-    increment: (state, action) => {
-      const item = state.items.find(item => item.name === action.payload);
+    incrementQty: (state, action) => {
+      const item = state.items.find((i) => i.id === action.payload);
       if (item) item.quantity += 1;
     },
-    decrement: (state, action) => {
-      const item = state.items.find(item => item.name === action.payload);
+    decrementQty: (state, action) => {
+      const item = state.items.find((i) => i.id === action.payload);
       if (item && item.quantity > 1) item.quantity -= 1;
-      else state.items = state.items.filter(item => item.name !== action.payload);
     },
-    toggleCartModal: (state) => {
-      state.showCartModal = !state.showCartModal;
+    toggleModal: (state) => {
+      state.showModal = !state.showModal;
     },
-    confirmOrder: (state) => {
-      state.items = [];
-      state.showBottomBar = false;
-      state.showCartModal = false;
-    }
-  }
+  },
 });
 
-export const { addToCart, increment, decrement, toggleCartModal, confirmOrder } = cartSlice.actions;
+export const { addToCart, incrementQty, decrementQty, toggleModal } = cartSlice.actions;
 export default cartSlice.reducer;

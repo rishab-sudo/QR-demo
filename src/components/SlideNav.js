@@ -1,8 +1,11 @@
 import React from "react";
 import { FaQrcode, FaSignInAlt, FaUserTie } from "react-icons/fa";
+import { useSelector } from "react-redux";
 import "./Header.css";
 
-const SlideNav = ({ isOpen, onClose }) => {
+const SlideNav = ({ onClose }) => {
+  const isOpen = useSelector((state) => state.nav.isOpen);
+
   return (
     <div className={`sidebar ${isOpen ? "open" : ""}`}>
       <button className="close-btn" onClick={onClose}>×</button>

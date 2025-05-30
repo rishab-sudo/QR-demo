@@ -1,12 +1,79 @@
-/* App.css */
-.app-layout {
-  display: flex;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
 }
 
-.main-content {
-  margin-left: 600px;
+/* Wrapper for sidebar and dishes */
+.menu-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
   padding: 20px;
+  background-color: blueviolet;
+  padding-bottom: 180px; 
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* Sidebar */
+.menu-wrapper > :first-child {
+  width: 300px;
+  flex-shrink: 0;
+}
+
+/* Main content */
+.main-content {
   flex: 1;
-  min-height: 100vh;
-  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+}
+
+/* Dish cards container */
+.dish-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 600px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .menu-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu-wrapper > :first-child {
+    display: none;
+  }
+
+  .main-content {
+    width: 100%;
+    align-items: center;
+  }
+}
+
+/* Bottom cart bar */
+.bottom-cart-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  border-top: 1px solid #ccc;
+  background-color: aqua;
+  z-index: 999;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

@@ -6,6 +6,13 @@
   padding: 10px 20px;
   background: white;
   border-bottom: 1px solid #ddd;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 60px;
+  box-sizing: border-box;
 }
 
 .left, .right {
@@ -13,9 +20,12 @@
   align-items: center;
 }
 
+.left {
+  gap: 15px;
+}
+
 .icon {
   font-size: 22px;
-  margin-right: 10px;
   cursor: pointer;
 }
 
@@ -23,8 +33,50 @@
   height: 40px;
 }
 
-.icon.active {
-  color: green;
+.veg-toggle {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+}
+
+.veg-option, .non-veg-option {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.veg-label, .non-veg-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #666;
+}
+
+.veg-icon {
+  color: #28a745;
+  transition: opacity 0.3s ease;
+}
+
+.veg-icon.active {
+  opacity: 1;
+}
+
+.veg-icon:not(.active) {
+  opacity: 0.5;
+}
+
+.non-veg-icon {
+  color: #dc3545;
+  font-size: 18px;
+  transition: opacity 0.3s ease;
+}
+
+.non-veg-icon.active {
+  opacity: 1;
+}
+
+.non-veg-icon:not(.active) {
+  opacity: 0.5;
 }
 
 /* Sidebar */
@@ -123,5 +175,98 @@
 .search-icon {
   margin-left: 8px;
   color: #555;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 8px 15px;
+    position: relative;
+  }
+
+  .hotel-logo {
+    height: 32px;
+  }
+
+  .icon {
+    font-size: 20px;
+  }
+
+  .non-veg-icon {
+    font-size: 16px;
+  }
+
+  .veg-label, .non-veg-label {
+    font-size: 13px;
+  }
+
+  .left {
+    gap: 10px;
+  }
+
+  .search-bar {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 45%;
+    max-width: 250px;
+    padding: 0;
+  }
+
+  .fixed-label {
+    display: none;
+  }
+
+  .divider {
+    display: none;
+  }
+
+  .search-input-box {
+    padding: 4px 6px;
+  }
+
+  .search-input-box input {
+    padding: 4px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header {
+    padding: 6px 10px;
+  }
+
+  .hotel-logo {
+    height: 28px;
+  }
+
+  .icon {
+    font-size: 18px;
+  }
+
+  .non-veg-icon {
+    font-size: 14px;
+  }
+
+  .veg-label, .non-veg-label {
+    font-size: 12px;
+  }
+
+  .left {
+    gap: 8px;
+  }
+
+  .search-bar {
+    width: 50%;
+    max-width: 200px;
+  }
+
+  .search-input-box {
+    padding: 3px 5px;
+  }
+
+  .search-input-box input {
+    font-size: 13px;
+  }
 }
 

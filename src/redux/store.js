@@ -1,11 +1,14 @@
-// redux/store.js
 import { configureStore } from "@reduxjs/toolkit";
 import cartReducer from "./cartSlice";
-import menuReducer from "./menuSlice"; // if applicable
+import navReducer from "./navSlice";
 
-export const store = configureStore({
+
+
+export default configureStore({
   reducer: {
     cart: cartReducer,
-    menu: menuReducer
-  }
+    nav: navReducer,
+  },
 });
+
+// redux/cartSlice.js
