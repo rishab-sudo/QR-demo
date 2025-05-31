@@ -8,7 +8,7 @@ const DishCard = React.forwardRef((props, ref) => {
   const dispatch = useDispatch();
   const dishRefs = useRef({});
 
-  // Function to get ref for a dish
+ 
   const getDishRef = (id) => {
     if (!dishRefs.current[id]) {
       dishRefs.current[id] = React.createRef();
@@ -16,7 +16,7 @@ const DishCard = React.forwardRef((props, ref) => {
     return dishRefs.current[id];
   };
 
-  // Expose refs to parent components
+
   React.useImperativeHandle(ref, () => ({
     scrollToDish: (id) => {
       const dishRef = dishRefs.current[id];
