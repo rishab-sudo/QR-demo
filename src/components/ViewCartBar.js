@@ -31,7 +31,7 @@ const ViewCartBar = () => {
       </div>
       <div className="cart-summary">
         <div className="total-info">
-          <span className="total-items">{totalItems} items</span>
+          {/* <span className="total-items">{totalItems} items</span> */}
           <span className="total-amount">₹{totalAmount.toFixed(2)}</span>
         </div>
         <button className="view-cart-btn" onClick={handleViewCart}>

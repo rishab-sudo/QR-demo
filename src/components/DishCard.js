@@ -31,6 +31,7 @@ const DishCard = React.forwardRef((props, ref) => {
   }));
 
   return (
+    <>
     <div className="main-dish-cart">
       <div className="dish-items-container">
         {menuData.map((category) =>
@@ -51,7 +52,9 @@ const DishCard = React.forwardRef((props, ref) => {
           ))
         )}
       </div>
+
     </div>
+    </>
   );
 });
 

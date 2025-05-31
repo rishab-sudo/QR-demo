@@ -1,10 +1,28 @@
+/* .cart-modal {
+  position: fixed;
+  bottom: 0;
+  left: 260px;
+  right: 0;
+  width: calc(100% - 260px);
+  height: 50vh;
+  background: #ffffff;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+  z-index: 1002;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  overflow-y: auto;
+  animation: slideUp 0.3s ease-out;
+} */
 .cart-modal {
   position: fixed;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 50%;
-  max-width: 700px;
+  width: 100%;
+  max-width: 1200px; /* Same as .menu-wrapper */
   height: 50vh;
   background: #ffffff;
   border-top-left-radius: 16px;
@@ -20,10 +38,10 @@
 
 @keyframes slideUp {
   from {
-    transform: translate(-50%, 100%);
+    transform: translateY(100%);
   }
   to {
-    transform: translate(-50%, 0);
+    transform: translateY(0);
   }
 }
 
@@ -125,16 +143,16 @@
 /* Responsive styles */
 @media screen and (max-width: 1400px) {
   .cart-modal {
-    width: 50%;
-    max-width: 700px;
+    width: calc(100% - 260px);
+    max-width: 800px;
     padding: 20px;
   }
 }
 
 @media screen and (max-width: 1024px) {
   .cart-modal {
-    width: 50%;
-    max-width: 700px;
+    width: calc(100% - 260px);
+    max-width: 800px;
     padding: 20px;
   }
 
@@ -150,8 +168,8 @@
 
 @media screen and (max-width: 768px) {
   .cart-modal {
-    width: 50%;
-    max-width: 700px;
+    left: 0;
+    width: 100%;
     padding: 15px;
   }
 

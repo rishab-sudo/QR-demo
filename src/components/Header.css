@@ -179,6 +179,9 @@
 
 /* Responsive Styles */
 @media screen and (max-width: 768px) {
+  .veg-label, .non-veg-label {
+ display: none;
+  }
   .header {
     padding: 8px 15px;
     position: relative;
