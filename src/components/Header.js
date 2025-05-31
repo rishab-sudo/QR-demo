@@ -15,7 +15,7 @@ const Header = () => {
       <header className="header">
         <div className="left">
           <FaBars className="icon" onClick={() => dispatch(setNavOpen(true))} />
-          <img src="/hotel-logo.png" alt="Hotel Logo" className="hotel-logo" />
+          <img src={require("../assets/QR-logo.png")} alt="Hotel Logo" className="hotel-logo" />
         </div>
 
         <SearchBar vegOnly={vegOnly} />

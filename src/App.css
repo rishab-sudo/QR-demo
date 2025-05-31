@@ -14,7 +14,7 @@ body {
   align-items: flex-start;
   gap: 20px;
   padding: 20px;
-  background-color: blueviolet;
+  background-color: rgba(211, 211, 211, 0.082);
   padding-bottom: 180px; 
   max-width: 1200px;
   width: 90%;

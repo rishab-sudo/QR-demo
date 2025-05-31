@@ -10,7 +10,7 @@ const SlideNav = ({ onClose }) => {
     <div className={`sidebar ${isOpen ? "open" : ""}`}>
       <button className="close-btn" onClick={onClose}>×</button>
       <div className="sidebar-content">
-        <img src="/hotel-logo.png" alt="Hotel Logo" className="sidebar-logo" />
+       <img src={require("../assets/QR-logo.png")} alt="Hotel Logo" className="hotel-logo" />
 
         <button className="sidebar-btn">
           <FaSignInAlt className="btn-icon" /> Login
